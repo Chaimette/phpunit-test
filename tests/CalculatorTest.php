@@ -16,10 +16,44 @@ class CalculatorTest extends TestCase
         //Act
         $calculator = new Calculator();
         $sum = $calculator->sum($firstValue, $secondValue);
-        
+
         //Assert
-        $this->assertSame($expectedResult, $sum, 
+        $this->assertSame(
+            $expectedResult,
+            $sum,
             "La méthode sum() ne fonctionne plus :-("
         );
+    }
+
+    public function testMultiplication(): void
+    {
+        //Arrange
+        $firstValue = 5;
+        $secondValue = 6;
+        $expectedResult = 30;
+
+        //Act
+        $calculator = new Calculator();
+        $multiplication = $calculator->multiplication($firstValue, $secondValue);
+
+        //Assert
+        $this->assertSame(
+            $expectedResult,
+            $multiplication,
+            "La méthode multiplication() ne fonctionne plus :-("
+        );
+    }
+
+    public function testIsEven()
+    {
+        // Arrange
+        $value = 10;
+
+        // Act
+        $calculator = new Calculator();
+        $result = $calculator->isEven($value);
+
+        // Assert
+        $this->assertTrue($result, "Ce résultat est impair");
     }
 }
